@@ -24,7 +24,7 @@ jobs:
       - name: Checkout test suite
         uses: actions/checkout@v3
         with:
-          repository: ${{ secrets.OOP_QUIZ_SEC35_TESTER_REPO }}  # change to your org/repo
+          repository: ${{ secrets.OOP_QUIZ2_SEC35_TESTER_REPO }}  # change to your org/repo
           ref: main
           path: tester
       # 4. Setup files
