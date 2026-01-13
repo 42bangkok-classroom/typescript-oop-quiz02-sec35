@@ -1,4 +1,4 @@
-# Subject 1 — Fetch First & Last Post
+# Subject 2 — Filter Posts By User
 
 ## API Endpoint
 
@@ -8,26 +8,32 @@ https://jsonplaceholder.typicode.com/posts
 
 ## Function name
 
-`getEdgePosts`
+`getPostsByUser`
 
 ## Function interface
 
 ```tsx
-getEdgePosts()
+getPostsByUser(userId)
 ```
 
 ## Description
 
-Fetch posts from the API and return only the **first** and **last** post as an array.
+Fetch posts and return only posts that belong to the given `userId`.
 
 Return only `id` and `title`.
+
+## Example input
+
+```tsx
+getPostsByUser(1)
+```
 
 ## Example output
 
 ```json
 [
   { id: 1, title: "sunt aut facere repellat provident occaecati" },
-  { id: 100, title: "at nam consequatur ea labore ea harum" }
+  { id: 2, title: "qui est esse" }
 ]
 ```
 
