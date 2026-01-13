@@ -7,6 +7,8 @@ on:
     branches: [ "main" ]
 
 permissions:
+  checks: write
+  actions: read
   contents: read
 
 jobs:
@@ -23,14 +25,13 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20
-      # 3. Checkout private tester repo
-      - name: Checkout test suite
-        uses: actions/checkout@v3
-        with:
-          repository: ${{ secrets.OOP_QUIZ2_SEC35_TESTER_REPO }}  # change to your org/repo
-          token: ${{ secrets.OOP_QUIZ2_SEC35_TOKEN }}
-          ref: main
-          path: tester
+          cache: 'npm'
+      # 3. Clone Test
+      - name: Clone GitLab tester
+        run: |
+          git clone https://oauth2:${GITLAB_TOKEN}@gitlab.com/42bangkok-classroom/typescript-oop-quiz-2-sec35-tester.git tester
+        env:
+          GITLAB_TOKEN: ${{ secrets.OOP_CLASSROOM_GITLAB_TOKEN }}
       # 4. Setup files
       - name: setup files
         run: |
