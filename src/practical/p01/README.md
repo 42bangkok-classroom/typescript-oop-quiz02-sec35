@@ -31,6 +31,28 @@ Return only `id` and `title`.
 ]
 ```
 
+## Edge Cases
+
+### Single post in array
+If there is only one post, return it twice (as both first and last):
+
+```json
+[
+  { id: 1, title: "Only post" },
+  { id: 1, title: "Only post" }
+]
+```
+
+### Exactly two posts
+If there are exactly two posts, return both:
+
+```json
+[
+  { id: 1, title: "First" },
+  { id: 2, title: "Second" }
+]
+```
+
 ## Global Rules
 
 - Use **axios**

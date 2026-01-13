@@ -32,6 +32,25 @@ Note: The API returns posts with `id` field, but your output should use `postId`
 ]
 ```
 
+## Edge Cases
+
+### Posts with zero comments
+If a post has no comments, set `totalComments` to `0`:
+
+```json
+[
+  { postId: 1, title: "Post 1", totalComments: 0 },
+  { postId: 2, title: "Post 2", totalComments: 0 }
+]
+```
+
+### Empty posts array
+If there are no posts, return an empty array:
+
+```json
+[]
+```
+
 ## Global Rules
 
 - Use **axios**

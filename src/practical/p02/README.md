@@ -37,6 +37,34 @@ getPostsByUser(1)
 ]
 ```
 
+## Edge Cases
+
+### No posts match userId
+If no posts match the given `userId`, return an empty array:
+
+```tsx
+getPostsByUser(999)
+```
+
+```json
+[]
+```
+
+### Multiple posts for same userId
+If there are multiple posts for the same user, return all of them:
+
+```tsx
+getPostsByUser(1)
+```
+
+```json
+[
+  { id: 1, title: "Post 1" },
+  { id: 2, title: "Post 2" },
+  { id: 3, title: "Post 3" }
+]
+```
+
 ## Global Rules
 
 - Use **axios**
