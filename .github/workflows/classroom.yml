@@ -33,9 +33,11 @@ jobs:
           echo "=== Setup files ==="
           tree ./tester
           cp -r tester/.github/* .github/
+          # Copy test files and fixtures
           rsync -av \
             --include="*/" \
             --include="*.test.ts" \
+            --include="__fixtures__/**" \
             --exclude="*" \
             tester/src/ src/
           cp tester/package.json .
